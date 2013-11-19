@@ -1,9 +1,16 @@
 ﻿@font-face
 {
     font-family: Bariol;
-    src:url('Bariol_regular.otf');
+    src:url('Bariol_Regular.otf');
+    font-weight:normal;
 }
 
+@font-face
+{
+    font-family: Bariol;
+    src:url('Bariol-Bold.otf');
+    font-weight:bold;
+}
 h3
 {
     font-size:1.5em;
@@ -27,9 +34,14 @@ div.wrapper
 {
     margin:0 auto;
     width:100%;
-    min-width:1050px;
+    min-width:950px;
     max-width:1400px;
     height:auto;
+}
+
+div.wrapper > img
+{
+    width:100%;
 }
 
 div.info1 > div > p, div.info > div > p, div.infoH > div > p, div.infoH > div > ul, div.infoC > div > p, div.infoC > div > ul
@@ -71,6 +83,7 @@ div.top-wrapper
     background-size:100% auto;
     background-position:center top;
     background-repeat:no-repeat;
+    transition:.25s;
 }
 
 div.top-wrapper > div.mid-in-wrapper > hr
@@ -97,6 +110,11 @@ div.info1 > div
     height:350px;
 }
 
+div.info1 > hr 
+{
+    display:inline-block;
+}
+
 div.info, div.info1, div.infoH, div.infoC
 {
     padding:5%;
@@ -121,19 +139,27 @@ div.info > div.mn-wrapper > div
     display:inline-block;
 }
 
-div.top-wrapper > div.mid-in-wrapper
-{
-    margin-top:5%;
-    text-align:center;
-}
-
-@media all and (orientation:landscape)
-{
     div.top-wrapper > div.mid-in-wrapper
     {
         margin-top:10%;
         text-align:center;
+        transition:.25s;
     }
+
+    @media screen and (max-width:1200px) {
+   /* Portrait styles here */
+   div.top-wrapper > div.mid-in-wrapper
+    {
+        margin-top:5%;
+        text-align:center;
+        transition:.25s;
+    }
+   div.top-wrapper
+   {
+        height:500px;
+        transition:.25s;
+   }
+
 }
 
 div.top-wrapper > div > p
