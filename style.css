@@ -1,0 +1,238 @@
+﻿@font-face
+{
+    font-family: Bariol;
+    src:url('Bariol_regular.otf');
+}
+
+h3
+{
+    font-size:1.5em;
+    margin-bottom:.4em;
+}
+
+hr
+{
+    width:5%;
+}
+
+body
+{
+    padding:0px;
+    margin:0px;
+    font-family: Bariol;
+    font-size:1.1em;
+}
+
+div.wrapper
+{
+    margin:0 auto;
+    width:100%;
+    min-width:1050px;
+    max-width:1400px;
+    height:auto;
+}
+
+div.info1 > div > p, div.info > div > p, div.infoH > div > p, div.infoH > div > ul, div.infoC > div > p, div.infoC > div > ul
+{
+    color:grey;
+    line-height:2em;
+}
+
+div.infoH > div > ul, div.infoC > div > ul
+{
+    text-align:left;
+}
+
+div.infoC > div > ul
+{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+div.infoC > div > ul > li
+{
+    padding-left:1em;
+}
+
+div.infoC > div > ul > li:before
+{
+    content: "• ";
+    color: orange;
+}
+
+div.top-wrapper
+{
+    height:700px;
+    width:100%;
+    padding-top:2.5%;
+    color:white;
+    background-image:url('header.jpg');
+    background-size:100% auto;
+    background-position:center top;
+    background-repeat:no-repeat;
+}
+
+div.top-wrapper > div.mid-in-wrapper > hr
+{
+    width:10%;
+    border-style:solid;
+}
+div.top-wrapper > div, div.info1 > div, div.info > div.mn-wrapper, div.infoH > div, div.infoC > div
+{
+    margin:auto;
+    width:70%;
+    height:auto;
+    min-width:950px;
+}
+
+
+div.info1 > div
+{
+    width:70%;
+    margin:auto;
+    background-image:url('router.png');
+    background-position:right top;
+    background-repeat:no-repeat;
+    height:350px;
+}
+
+div.info, div.info1, div.infoH, div.infoC
+{
+    padding:5%;
+}
+
+div.info, div.infoH, div.infoC
+{
+    text-align:center;
+}
+
+div.info > div.mn-wrapper, div.infoC > div
+{
+    width:40%;
+    text-align:center;
+    min-width:650px;
+}
+
+div.info > div.mn-wrapper > div
+{
+    position:relative;
+    width:35%;
+    display:inline-block;
+}
+
+div.top-wrapper > div.mid-in-wrapper
+{
+    margin-top:5%;
+    text-align:center;
+}
+
+@media all and (orientation:landscape)
+{
+    div.top-wrapper > div.mid-in-wrapper
+    {
+        margin-top:10%;
+        text-align:center;
+    }
+}
+
+div.top-wrapper > div > p
+{
+    font-size:1.3em;
+}
+
+div.top-wrapper > div > ul
+{
+    padding:0px;
+    float:right;
+}
+div.top-wrapper > div > ul > li
+{
+    list-style-type: none;
+    text-indent: 0px;
+    display:inline-block;
+    padding-top:10px;
+    padding-right:20px;
+}
+
+div.button, div.mn-button, div.infoC > div > div#joinBut
+{
+    margin:0 auto;
+    height:60px;
+    width:190px;
+    line-height:60px;
+    text-align:center;
+    border:1px solid;
+    border-radius:3px;
+    background-color:rgba(255,255,255,0.05);
+    transition:background ease .25s;
+    cursor:pointer;
+}
+
+div.infoC
+{
+    background-color:#363636;
+}
+
+div.infoC > div >hr{color:grey;}
+
+div.infoC > div > h3{color:white;}
+
+div.mn-button, div.infoC > div > div#joinBut
+{
+    border:none;
+    color:white;
+    margin-top:10px;
+}
+
+
+div#neighBut
+{
+    background-color:rgba(247,180,27,1);
+}
+
+div#merchBut, div.infoC > div > div#joinBut
+{
+    background-color:rgba(236,120,26,1);
+}
+
+div.button:hover
+{
+    background-color:rgba(255,255,255,0.3);
+    cursor:pointer;
+}
+
+div#neighBut:hover
+{
+    background-color:rgba(247,180,27,.85);
+}
+
+div#merchBut:hover, div.infoC > div > div#joinBut:hover
+{
+    background-color:rgba(236,120,26,.85);
+}
+
+footer
+{
+    color:white;
+    text-align:center;
+    background-color:#252525;
+    height:65px;
+    line-height:65px;
+    width:100%;
+}
+
+a
+{
+    color:white;
+    text-decoration:none;
+    transition:.5s
+}
+
+a:hover
+{
+    text-decoration:underline;
+}
+
+/*
+        <img src="3.jpg" />*/
