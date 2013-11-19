@@ -35,13 +35,13 @@ div.wrapper
     margin:0 auto;
     width:100%;
     min-width:950px;
-    max-width:1400px;
     height:auto;
 }
 
 div.wrapper > img
 {
     width:100%;
+    max-width:950px;
 }
 
 div.info1 > div > p, div.info > div > p, div.infoH > div > p, div.infoH > div > ul, div.infoC > div > p, div.infoC > div > ul
@@ -146,7 +146,7 @@ div.info > div.mn-wrapper > div
         transition:.25s;
     }
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:1100px) {
    /* Portrait styles here */
    div.top-wrapper > div.mid-in-wrapper
     {
@@ -161,6 +161,16 @@ div.info > div.mn-wrapper > div
    }
 
 }
+
+@media screen and (min-width:1500px)
+{
+    div.top-wrapper
+    {
+        height:900px;
+    }
+}
+
+    @
 
 div.top-wrapper > div > p
 {
