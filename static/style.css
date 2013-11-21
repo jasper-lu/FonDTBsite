@@ -135,12 +135,12 @@ div.info > div.mn-wrapper > div
 
     div.top-wrapper > div.mid-in-wrapper
     {
-        margin-top:10%;
+        margin-top:8%%;
         text-align:center;
         transition:.25s;
     }
 
-    @media screen and (max-width:1100px) {
+@media screen and (max-width:1100px) {
    /* Portrait styles here */
    div.top-wrapper > div.mid-in-wrapper
     {
@@ -162,9 +162,20 @@ div.info > div.mn-wrapper > div
     {
         height:900px;
     }
+    div.mid-in-wrapper > h1
+    {
+	font-size:4em;
+    }
+    div.mid-in-wrapper > h2
+    {
+	font-size:3em;
+    }
+    div.mid-in-wrapper > p
+    {
+	font-size:2em;
+    }
 }
 
-    @
 
 div.top-wrapper > div > p
 {
