@@ -30,18 +30,12 @@ body
     font-size:1.1em;
 }
 
-div.wrapper
-{
-    margin:0 auto;
-    width:100%;
-    min-width:950px;
-    height:auto;
-}
-
 div.wrapper > img
 {
-    width:100%;
-    max-width:950px;
+    width:70%;
+    min-width:950px;
+    margin:0 auto;
+    display:block;
 }
 
 div.info1 > div > p, div.info > div > p, div.infoH > div > p, div.infoH > div > ul, div.infoC > div > p, div.infoC > div > ul
