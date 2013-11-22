@@ -166,6 +166,11 @@ div.info > div.mn-wrapper > div
 
 }
 
+div.top-wrapper > div > p
+{
+    font-size:1.3em;
+}
+
 @media screen and (min-width:1500px)
 {
     div.top-wrapper
@@ -180,7 +185,7 @@ div.info > div.mn-wrapper > div
     {
 	font-size:3em;
     }
-    div.mid-in-wrapper > p
+    div.top-wrapper > div > p
     {
 	font-size:2em;
     }
@@ -197,10 +202,6 @@ div.info > div.mn-wrapper > div
     }
 }
 
-div.top-wrapper > div > p
-{
-    font-size:1.3em;
-}
 
 div.top-wrapper > div > ul
 {
