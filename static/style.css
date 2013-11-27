@@ -16,15 +16,18 @@ h1, h2, h3, ul, p, a
 {
     transition:font ease-in-out .25s;
 }
+
 h3
 {
     font-size:1.5em;
+    font-weight:normal;
     margin-bottom:.4em;
 }
 
 hr
 {
     width:5%;
+    border-bottom:none;
 }
 
 body
@@ -50,6 +53,7 @@ div.wrapper > img
 
 div.top-in-wrapper > img
 {
+    margin-right:2.5%;
 }
 
 div.info1 > img
@@ -103,6 +107,8 @@ div.top-wrapper > div.mid-in-wrapper > hr
 {
     width:10%;
     border-style:solid;
+    border-bottom:none;
+    border-width:1px;
 }
 
 div.top-wrapper > div, div.info1 > div, div.info > div.mn-wrapper, div.infoH > div, div.infoC > div
@@ -224,6 +230,8 @@ div.top-wrapper > div > ul
 {
     padding:0px;
     float:right;
+    margin:0px;
+    line-height:60px;
 }
 div.top-wrapper > div > ul > li
 {

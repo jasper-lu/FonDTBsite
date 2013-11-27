@@ -1,16 +1,20 @@
 ﻿<html>
 <head>
-    <title>Fon | Downtown Brooklyn</title>
+    <title>Downtown Brooklyn | Fon</title>
     <link rel="stylesheet" type="style/css" href="../static/style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
 </head>
 <body>
     <div class="wrapper">
         <div class="top-wrapper">
             <div class="top-in-wrapper">
                 <img src="../static/fon.png" />
+                <img src="../static/dtb.png" />
+                <img src="../static/free.png" />
                 <ul>
                     <li><a href="">Join in</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a class="scroll" href="#about">About</a></li>
                     <li><a href="">Contact us</a></li>
                 </ul>
             </div>
@@ -118,5 +122,23 @@
             All rights reserved Fon 2013
         </footer>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 500);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
+
 </html>
