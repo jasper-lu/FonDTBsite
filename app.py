@@ -1,8 +1,32 @@
 from flask import Flask
 from flask import render_template, request
-import csv
+import smtplib
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
+
+def sendemail(form):
+    fp = open(text,'rb')
+    msg = MIMEText(fp.read())
+    fp.close()
+    sub = ""
+    if form.type = "Business":
+	sub = sub + "Business | " + form.bname + " | "
+    else:
+	sub = sub + "Resident | " + form.name + " | "
+    
+    if 'mail' in form.values():
+	sub = sub + "Mailing List"
+
+    me = "admin@dtb.fon.com"
+    to = "jasper.lu@fon.com"
+
+    msg['Subject'] = sub
+    msg['From'] = me
+    msg['To'] = to
+    s = smtplib.SMTP('localhost')
+    s.sendmail(me,[to],msg.as_string())
+    s.quit()
 
 @app.route('/')
 def home():
@@ -19,8 +43,7 @@ def signup():
 	fp = open('data','wb')
 	fp.write(s + '\n')
 	fp.close()
-	if 'mail' in form.values():
-	    print form['mail']
+	sendemail(form)
 	return render_template("signup.html")
 
 if __name__=="__main__":
