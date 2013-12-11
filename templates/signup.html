@@ -95,12 +95,15 @@
 			$('input[name=bname]').removeAttr('disabled');
 		});
 		$('form#data').submit(function(e) {
-		    form = $(this).serializeArray();
+		    var form = $(this).serializeArray();
+		    var cont = true; 
 		    for (x in form) {
-			if(form[x].value == "")
+			if(form[x].value == "") {
 			    e.preventDefault();
-			    alert("Every field must be filled out!");
+			    alert("Every field must be filled out! (" + form[x].name + ")");
+			    cont = false;
 			    break;
+			}
 		    }
 		}); 
 	    });

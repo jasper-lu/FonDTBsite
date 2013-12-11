@@ -1,30 +1,30 @@
 from flask import Flask
-from flask import render_template, request
+from flask import render_template, request, redirect
 import smtplib
 from email.mime.text import MIMEText
 
 app = Flask(__name__)
 
 def sendemail(form):
-    fp = open(text,'rb')
+    fp = open("text",'a+')
     msg = MIMEText(fp.read())
     fp.close()
     sub = ""
-    if form.type = "Business":
-	sub = sub + "Business | " + form.bname + " | "
+    if form['type'] == "Business":
+	sub = sub + "Business | " + form['bname'] + " | "
     else:
-	sub = sub + "Resident | " + form.name + " | "
+	sub = sub + "Resident | " + form['name'] + " | "
     
     if 'mail' in form.values():
 	sub = sub + "Mailing List"
 
-    me = "admin@dtb.fon.com"
+    me = "jasper.lu@fon.com"
     to = "jasper.lu@fon.com"
 
     msg['Subject'] = sub
     msg['From'] = me
     msg['To'] = to
-    s = smtplib.SMTP('localhost')
+    s = smtpbli.SMTP('localhost',1024)
     s.sendmail(me,[to],msg.as_string())
     s.quit()
 
@@ -44,7 +44,7 @@ def signup():
 	fp.write(s + '\n')
 	fp.close()
 	sendemail(form)
-	return render_template("signup.html")
+	return redirect("/")
 
 if __name__=="__main__":
     app.debug=True
