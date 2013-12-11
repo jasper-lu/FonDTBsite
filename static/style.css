@@ -257,7 +257,7 @@ div.button, a.mn-button, div.infoC > div > div#joinBut
     cursor:pointer;
 }
 
-div.button > a {
+div.button > a, div#joinBut > a {
     width:100%;
     height:100%;
     color:white;
