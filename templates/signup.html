@@ -1,106 +1,102 @@
 ﻿<!DOCTYPE html>
 
 <html>
-<head>
-    <title>Downtown Brooklyn | Fon</title>
-    <link rel="stylesheet" href="../static/signup.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
-<body>
-    <div class="background"></div>
+    <head>
+	<title>Downtown Brooklyn | Fon</title>
+	<link rel="stylesheet" href="../static/signup.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+	<div class="background"></div>
 
-    <div class="wrapper">
-        <div class="top-wrapper">
-            <div class="top-in-wrapper">
-                <img src="../static/fon.png" />
-                <img src="../static/dtb.png" />
-                <img src="../static/free.png" />
-                <ul>
-                    <li><a href="">Join in</a></li>
-                    <li><a class="scroll" href="#about">About</a></li>
-                    <li><a href="">Contact us</a></li>
-                </ul>
-            </div>
-            <div class="mid-in-wrapper">
-                <div class="table-wrapper">
-                    <form id="data">
-                        <table>
-                            <tr>
-                                <td>You are a</td>
-                                <td>
-                                    <select>
-                                        <option>
-                                            Business
-                                        </option>
-                                        <option>
-                                            Resident
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Business Name</td>
-                                <td><input type="text" name="bname" /></td>
-                            </tr>
-                            <tr>
-                                <td>Full Name</td>
-                                <td><input type="text" name="name" /></td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td><input type="text" name="email" /></td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td><input type="text" name="address" /></td>
-                            </tr>
-                            <tr>
-                                <td>City</td>
-                                <td><input type="text" name="city" value="Brooklyn" disabled="disabled" /></td>
-                            </tr>
-                            <tr>
-                                <td>State</td>
-                                <td><input type="text" name="city" value="New York" disabled="disabled" /></td>
-                            </tr>
-                            <tr>
-                                <td>Zip Code</td>
-                                <td><input type="text" name="city" /></td>
-                            </tr>
-                            <tr>
-                                <td>Phone</td>
-                                <td><input type="text" name="city" /></td>
-                            </tr>
-                            <tr>
-                                <td>Mailing List</td>
-                                <td><input type="checkbox" name="mail" /></td>
-                            </tr>
-                        </table>
-                    </form>
-                <div id="joinBut" class="button">JOIN NOW</div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <footer>
-            All rights reserved Fon 2013
-        </footer>
-    <script>
-        $(document).ready(function () {
-            $('a[href*=#]:not([href=#])').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 500);
-                        return false;
-                    }
-                }
-            });
-        });
-    </script>
-</body>
+	<div class="wrapper">
+	    <div class="top-wrapper">
+		<div class="top-in-wrapper">
+			<img src="../static/fon.png" />
+			<img src="../static/dtb.png" />
+			<img src="../static/free.png" />
+		    <ul>
+			<li><a href="signup">Join in</a></li>
+			<li><a class="scroll" href="#about">About</a></li>
+			<li><a href="">Contact us</a></li>
+		    </ul>
+		</div>
+		<div class="mid-in-wrapper">
+		    <div class="table-wrapper">
+			<form method="POST" id="data">
+			    <table>
+				<tr>
+				    <td>You are a</td>
+				    <td>
+					<select name="type">
+					    <option>
+					    Business
+					    </option>
+					    <option>
+					    Resident
+					    </option>
+					</select>
+				    </td>
+				</tr>
+				<tr>
+				    <td>Business Name</td>
+				    <td><input type="text" name="bname" /></td>
+				</tr>
+				<tr>
+				    <td>Full Name</td>
+				    <td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+				    <td>Email</td>
+				    <td><input type="text" name="email" /></td>
+				</tr>
+				<tr>
+				    <td>Address</td>
+				    <td><input type="text" name="address" /></td>
+				</tr>
+				<tr>
+				    <td>City</td>
+				    <td><input type="text" name="city" value="Brooklyn" /></td>
+				</tr>
+				<tr>
+				    <td>State</td>
+				    <td><input type="text" name="state" value="New York" /></td>
+				</tr>
+				<tr>
+				    <td>Zip Code</td>
+				    <td><input type="text" name="zip" /></td>
+				</tr>
+				<tr>
+				    <td>Phone</td>
+				    <td><input type="text" name="phone" /></td>
+				</tr>
+				<tr>
+				    <td>Mailing List</td>
+				    <td><input type="checkbox" name="mail" /></td>
+				</tr>
+			    </table>
+			    <input type="submit" class="button" value="JOIN NOW">
+			</form>
+			
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<footer>
+	All rights reserved Fon 2013
+	</footer>
+	<script>
+	    $(document).ready(function () {
+		$('select[name=type]').change(function() {
+		    console.log(this);
+		    if(this.value == "Resident")
+			$('input[name=bname]').attr('disabled','disabled');
+		    else
+			$('input[name=bname]').removeAttr('disabled');
+		});
+	    });
+	</script>
+    </body>
 
 
 </html>

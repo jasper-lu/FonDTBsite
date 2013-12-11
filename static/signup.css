@@ -152,11 +152,10 @@ div.top-wrapper > div > ul > li
     padding-right:20px;
 }
 
-div.button {
+input.button {
     margin:0 auto;
     height:60px;
     width:190px;
-    line-height:60px;
     text-align:center;
     border:1px solid;
     font-weight:bold;
@@ -164,9 +163,11 @@ div.button {
     background-color:rgba(255,255,255,0.05);
     transition:background ease .25s;
     cursor:pointer;
+    color:white;
+    font-size:1em;
 }
 
-div.button:hover
+input.button:hover
 {
     background-color:rgba(255,255,255,0.3);
     cursor:pointer;
@@ -188,6 +189,10 @@ input,option,select {
     background-color:white;
     border:1px solid black;
     font-family:bariol;
+    border-radius:4px;
+}
+
+select {
 }
 
 input, option {
@@ -195,11 +200,18 @@ input, option {
     padding:5px;
     line-height:25px;
     margin-bottom:10px;
-    border-radius:4px;
 }
 
 input[disabled] {
     background-color:lightgrey;
+}
+
+input[type=text] {
+    transition:0.25s ease;
+}
+
+input[type=text]:focus {
+    margin-left:10px;
 }
 
 select {
