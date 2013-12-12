@@ -4,3 +4,5 @@
 ('city', 'k'), ('name', 'k'), ('zip', 'k'), ('phone', 'k'), ('state', 'k'), ('address', 'k'), ('type', 'Resident'), ('email', 'k')
 ('city', 'k'), ('name', 'k'), ('zip', 'k'), ('phone', 'k'), ('state', 'k'), ('address', 'k'), ('type', 'Resident'), ('email', 'k')
 ('city', 'Brooklyn'), ('name', 'Carlton'), ('zip', '11201-5663'), ('bname', 'pizza shop'), ('phone', '9176568071'), ('state', 'New York'), ('address', '125 court street, 11ks'), ('mail', 'on'), ('type', 'Business'), ('email', 'carlton.bennett@gmail.com')
+('city', 'Brooklyn'), ('name', 'Jasper Lu'), ('zip', '11235'), ('phone', '9172826160'), ('state', 'New York'), ('address', '2472 E 7 St'), ('type', 'Resident'), ('email', 'jasper.lu@fon.com')
+('city', 'Brooklyn'), ('name', 'Jasper Lu'), ('zip', '11235'), ('phone', '9172826160'), ('state', 'New York'), ('address', '2472 E 7 St'), ('type', 'Resident'), ('email', 'jasper.lu@fon.com')

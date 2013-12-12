@@ -106,13 +106,14 @@
 			$('input[name=bname]').removeAttr('disabled');
 		});
 		$('#data').submit(function(e) {
-			    e.preventDefault();
 		    var form = $(this).serializeArray();
 		    var cont = true; 
 		    for (x in form) {
 			if(form[x].value == "") {
 			    alert("Every field must be filled out! (" + form[x].name + ")");
 			    cont = false;
+			    e.preventDefault();
+return false;
 			    break;
 			}
 		    }
@@ -166,6 +167,7 @@
 			console.log(response); // if you're into that sorta thing
 });
 		alert("Your response has been saved! An email will be sent out with further instructinos some time in the next day");
+		  window.location.href=("/");
 	    });
 	});
 	</script>
