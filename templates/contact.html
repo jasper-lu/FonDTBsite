@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
     <head>
@@ -27,7 +27,7 @@
 		    <ul>
 			<li><a href="/signup">Join in</a></li>
 			<li><a class="scroll" href="#about">About</a></li>
-			<li><a href="/contact">Contact us</a></li>
+			<li><a href="mailto:jasper.lu@fon.com?subject=Downtown Brooklyn">Contact us</a></li>
 		    </ul>
 		</div>
 		<div class="mid-in-wrapper">
@@ -35,7 +35,90 @@
 			<form method="POST" id="data">
 			    <table>
 				<tr>
-				    <td>Name</td>
-				    <td><input></input></td>
+				    <td>You are a</td>
+				    <td>
+					<select name="type">
+					    <option>
+					    Business
+					    </option>
+					    <option>
+					    Resident
+					    </option>
+					</select>
+				    </td>
 				</tr>
 				<tr>
+				    <td>Business Name</td>
+				    <td><input type="text" name="bname" /></td>
+				</tr>
+				<tr>
+				    <td>Full Name</td>
+				    <td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+				    <td>Email</td>
+				    <td><input type="text" name="email" /></td>
+				</tr>
+				<tr>
+				    <td>Address</td>
+				    <td><input type="text" name="address" /></td>
+				</tr>
+				<tr>
+				    <td>City</td>
+				    <td><input type="text" name="city" value="Brooklyn" /></td>
+				</tr>
+				<tr>
+				    <td>State</td>
+				    <td><input type="text" name="state" value="New York" /></td>
+				</tr>
+				<tr>
+				    <td>Zip Code</td>
+				    <td><input type="text" name="zip" /></td>
+				</tr>
+				<tr>
+				    <td>Phone</td>
+				    <td><input type="text" name="phone" /></td>
+				</tr>
+				<tr>
+				    <td>Mailing List</td>
+				    <td><input type="checkbox" name="mail" /></td>
+				</tr>
+			    </table>
+			    <input type="submit" class="button" value="JOIN NOW">
+			</form>
+			
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<footer>
+	All rights reserved Fon 2013
+	</footer>
+	<script>
+	    $(document).ready(function () {
+		$('select[name=type]').change(function() {
+		    console.log(this);
+		    if(this.value == "Resident")
+			$('input[name=bname]').attr('disabled','disabled');
+		    else
+			$('input[name=bname]').removeAttr('disabled');
+		});
+		$('form#data').submit(function(e) {
+		    var form = $(this).serializeArray();
+		    var cont = true; 
+		    for (x in form) {
+			if(form[x].value == "") {
+			    e.preventDefault();
+			    alert("Every field must be filled out! (" + form[x].name + ")");
+			    cont = false;
+			    break;
+			}
+		    }
+		    alert('Your response has been recorded! An email with further instructions will be sent to you within the next business day.');
+		}); 
+	    });
+	</script>
+    </body>
+
+
+</html>

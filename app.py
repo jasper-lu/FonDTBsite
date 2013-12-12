@@ -45,6 +45,13 @@ def signup():
 	fp.close()
 	return redirect("/")
 
+@app.route('/contact', methods=['GET','POST'])
+def contact():
+    if request.method=='GET':
+	return render_template("contact.html")
+    else:
+	return render_template("contact.html")
+
 if __name__=="__main__":
     app.debug=True
     app.run(host='0.0.0.0',port=80)
