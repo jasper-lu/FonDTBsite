@@ -48,7 +48,7 @@ div.background {
     width:100%;
     min-width:950px;
     height:100%;
-    background-image:url('background.jpg');
+    background-image:url('header.jpg');
     background-position:right top;
     background-repeat:no-repeat;
     position:fixed;
