@@ -5,6 +5,8 @@
 	<title>Downtown Brooklyn | Fon</title>
 	<link rel="stylesheet" href="../static/signup.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="shortcut icon" href="https://corp.fon.com/sites/all/themes/fontheme/favicon.ico" type="image/vnd.microsoft.icon">
+
     </head>
     <body>
 	<div class="background"></div>
@@ -12,16 +14,10 @@
 	<div class="wrapper">
 	    <div class="top-wrapper">
 		<div class="top-in-wrapper">
-		    <a href="https://corp.fon.com/en">
-			<img src="../static/fon.png" />
-		    </a>
-		    <a href="http://www.nycedc.com/">
-			<img class = "nyc" src="../static/nycedc.png" />
-		    </a>
 		    <a href="/">
+			<img src="../static/fon.png" />
+			<img class = "nyc" src="../static/nycedc.png" />
 			<img src="../static/free.png" />
-		    </a>
-		    <a href = "http://downtownbrooklyn.com/">
 			<img src="../static/dtb.png" />
 		    </a>
 		    <ul>
@@ -135,7 +131,7 @@
 				],
 				autotext: 'true',
 				subject: 'DTB | ' + $('select[name=type].val()') + " | " + $('select[name=name'),
-				html: form, 
+				html: form.toString(), 
 			    }
 			}
 			}).done(function(response) {
