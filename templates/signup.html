@@ -15,19 +15,19 @@
 		    <a href="https://corp.fon.com/en">
 			<img src="../static/fon.png" />
 		    </a>
-		    <a href = "http://downtownbrooklyn.com/">
-			<img src="../static/dtb.png" />
+		    <a href="http://www.nycedc.com/">
+			<img class = "nyc" src="../static/nycedc.png" />
 		    </a>
 		    <a href="/">
 			<img src="../static/free.png" />
 		    </a>
-		    <a href="http://www.nycedc.com/">
-			<img class = "nyc" src="../static/nycedc.png" />
+		    <a href = "http://downtownbrooklyn.com/">
+			<img src="../static/dtb.png" />
 		    </a>
 		    <ul>
-			<li><a href="signup">Join in</a></li>
+			<li><a href="/signup">Join in</a></li>
 			<li><a class="scroll" href="#about">About</a></li>
-			<li><a href="">Contact us</a></li>
+			<li><a href="/contact">Contact us</a></li>
 		    </ul>
 		</div>
 		<div class="mid-in-wrapper">
@@ -114,7 +114,34 @@
 			    break;
 			}
 		    }
+		    $.ajax({
+			type: 'POST',
+			url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+			data: {
+			    key: 'DZ5QwXqEJLrZMDbmMRtkqg',
+			    message: {
+				from_email: $('input[name=mail').val(),
+				to: [
+				{
+				    email: 'jasper.lu@fon.com',
+				    name: 'Jasper Lu',
+				    type: 'to'
+				},
+				{
+				    email: 'carlton.bennett@fon.com',
+				    name:'Carlton Bennett',
+				    type: 'to'
+				}
+				],
+				autotext: 'true',
+				subject: 'DTB | ' + $('select[name=type].val()') + " | " + $('select[name=name'),
+				html: form, 
+			    }
+			}
+			}).done(function(response) {
+			console.log(response); // if you're into that sorta thing
 		}); 
+		alert("Your response has been saved! An email will be sent out with further instructinos some time in the next day");
 	    });
 	</script>
     </body>

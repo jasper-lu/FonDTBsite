@@ -51,14 +51,10 @@ div.wrapper > img
     display:block;
 }
 
-div.top-in-wrapper > a >img
+div.top-in-wrapper > a > img
 {
-    margin-right:2.5%;
-}
-
-
-img.nyc {
     height:35px;
+    margin-right:2.5%;
 }
 
 div.info1 > img
@@ -217,6 +213,10 @@ div.top-wrapper > div > p
     {
 	font-size:1.5em;
     }
+div.top-in-wrapper > a > img
+{
+    height:35px;
+}
     div.mid-in-wrapper > #joinBut
     {
 	height:100px;
@@ -240,7 +240,6 @@ div.top-wrapper > div > ul
     padding:0px;
     float:right;
     margin:0px;
-    line-height:60px;
 }
 div.top-wrapper > div > ul > li
 {

@@ -48,7 +48,7 @@ div.background {
     width:100%;
     min-width:950px;
     height:100%;
-    background-image:url('background.jpg');
+    background-image:url('header.jpg');
     background-position:right top;
     background-repeat:no-repeat;
     position:fixed;
@@ -70,10 +70,18 @@ div.wrapper > img
     display:block;
 }
 
-div.top-in-wrapper > img
+div.top-in-wrapper > a >  img
 {
     margin-right:2.5%;
+    height:35px;
 }
+
+@media screen and (max-width:1500px) {
+    div.top-in-wrapper > a > img {
+	height:20px;
+    }
+}
+
 
 div.top-in-wrapper > a, div.top-in-wrapper > ul > li > a
 {
@@ -159,7 +167,6 @@ div.top-wrapper > div > ul
     padding:0px;
     float:right;
     margin:0px;
-    line-height:60px;
 }
 div.top-wrapper > div > ul > li
 {

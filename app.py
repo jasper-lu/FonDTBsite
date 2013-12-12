@@ -40,11 +40,17 @@ def signup():
 	form = request.form
 	s = str(form)
 	s = s[20:-2].replace(", u'", ", '")
-	fp = open('data','wb')
-	fp.write(s + '\n')
+	fp = open('data','a+')
+	fp.write(s+"\n")
 	fp.close()
-	sendemail(form)
 	return redirect("/")
+
+@app.route('/contact', methods=['GET','POST'])
+def contact():
+    if request.method=='GET':
+	return render_template("contact.html")
+    else:
+	return render_template("contact.html")
 
 if __name__=="__main__":
     app.debug=True

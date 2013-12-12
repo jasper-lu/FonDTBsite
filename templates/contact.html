@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+	<title>Downtown Brooklyn | Fon</title>
+	<link rel="stylesheet" href="../static/signup.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+	<div class="background"></div>
+
+	<div class="wrapper">
+	    <div class="top-wrapper">
+		<div class="top-in-wrapper">
+		    <a href="https://corp.fon.com/en">
+			<img src="../static/fon.png" />
+		    </a>
+		    <a href="http://www.nycedc.com/">
+			<img class = "nyc" src="../static/nycedc.png" />
+		    </a>
+		    <a href="/">
+			<img src="../static/free.png" />
+		    </a>
+		    <a href = "http://downtownbrooklyn.com/">
+			<img src="../static/dtb.png" />
+		    </a>
+		    <ul>
+			<li><a href="/signup">Join in</a></li>
+			<li><a class="scroll" href="#about">About</a></li>
+			<li><a href="/contact">Contact us</a></li>
+		    </ul>
+		</div>
+		<div class="mid-in-wrapper">
+		    <div class="table-wrapper">
+			<form id="data">
+			    <table>
+				<tr>
+				    <td>Full Name</td>
+				    <td><input id="name"type="text" name="name" /></td>
+				</tr>
+				<tr>
+				    <td>Email</td>
+				    <td><input id="mail" type="email" name="email" /></td>
+				</tr>
+				<tr>
+				    <td>Your Question</td>
+				    <td><textarea id="q" style="width: 100%;
+					    height: auto;
+					    min-height: 100px;
+					    border-radius: 4px;"name="query"></textarea></td>
+				</tr>
+			    </table>
+			    <input id="submit" type="submit" class="button" value="SUBMIT">
+			</form>
+
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<footer>
+	All rights reserved Fon 2013
+	</footer>
+	<script>
+	    $(document).ready(function () {
+		$('#data').submit(function(e) {
+		    e.preventDefault();
+		    $.ajax({
+			type: 'POST',
+			url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+			data: {
+			    key: 'DZ5QwXqEJLrZMDbmMRtkqg',
+			    message: {
+				from_email: $('#mail').val(),
+				to: [
+				{
+				    email: 'jasper.lu@fon.com',
+				    name: 'Jasper Lu',
+				    type: 'to'
+				},
+				{
+				    email: 'carlton.bennett@fon.com',
+				    name:'Carlton Bennett',
+				    type: 'to'
+				}
+				],
+				autotext: 'true',
+				subject: 'DTB Query | ' + $('#name').val(),
+				html: $('#q').val()  + $('#mail').val(),
+			    }
+			}
+			}).done(function(response) {
+			console.log(response); // if you're into that sorta thing
+		    }); 
+		    alert('Your email has been sent! We will respond to you within the next business day.');
+		}); 
+	    });
+	</script>
+    </body>
+
+
+</html>
