@@ -27,7 +27,7 @@
 		    <ul>
 			<li><a href="/signup">Join in</a></li>
 			<li><a class="scroll" href="#about">About</a></li>
-			<li><a href="mailto:jasper.lu@fon.com?subject=Downtown Brooklyn">Contact us</a></li>
+			<li><a href="/contact">Contact us</a></li>
 		    </ul>
 		</div>
 		<div class="mid-in-wrapper">
@@ -48,19 +48,43 @@
 				    </td>
 				</tr>
 				<tr>
+				    <td>Business Name</td>
+				    <td><input type="text" name="bname" /></td>
+				</tr>
+				<tr>
 				    <td>Full Name</td>
 				    <td><input type="text" name="name" /></td>
 				</tr>
 				<tr>
 				    <td>Email</td>
-				    <td><input type="email" name="email" /></td>
+				    <td><input type="text" name="email" /></td>
 				</tr>
 				<tr>
-				    <td>Your Question</td>
-				    <td><textarea name="query"></textarea></td>
+				    <td>Address</td>
+				    <td><input type="text" name="address" /></td>
+				</tr>
+				<tr>
+				    <td>City</td>
+				    <td><input type="text" name="city" value="Brooklyn" /></td>
+				</tr>
+				<tr>
+				    <td>State</td>
+				    <td><input type="text" name="state" value="New York" /></td>
+				</tr>
+				<tr>
+				    <td>Zip Code</td>
+				    <td><input type="text" name="zip" /></td>
+				</tr>
+				<tr>
+				    <td>Phone</td>
+				    <td><input type="text" name="phone" /></td>
+				</tr>
+				<tr>
+				    <td>Mailing List</td>
+				    <td><input type="checkbox" name="mail" /></td>
 				</tr>
 			    </table>
-			    <input type="submit" class="button" value="SUBMIT">
+			    <input type="submit" class="button" value="JOIN NOW">
 			</form>
 			
 		    </div>
@@ -90,8 +114,34 @@
 			    break;
 			}
 		    }
-		    alert('Your response has been recorded! An email with further instructions will be sent to you within the next business day.');
+		    $.ajax({
+			type: 'POST',
+			url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+			data: {
+			    key: 'DZ5QwXqEJLrZMDbmMRtkqg',
+			    message: {
+				from_email: $('input[name=mail').val(),
+				to: [
+				{
+				    email: 'jasper.lu@fon.com',
+				    name: 'Jasper Lu',
+				    type: 'to'
+				},
+				{
+				    email: 'carlton.bennett@fon.com',
+				    name:'Carlton Bennett',
+				    type: 'to'
+				}
+				],
+				autotext: 'true',
+				subject: 'DTB | ' + $('select[name=type].val()') + " | " + $('select[name=name'),
+				html: form, 
+			    }
+			}
+			}).done(function(response) {
+			console.log(response); // if you're into that sorta thing
 		}); 
+		alert("Your response has been saved! An email will be sent out with further instructinos some time in the next day");
 	    });
 	</script>
     </body>
