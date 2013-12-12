@@ -56,6 +56,10 @@ div.top-in-wrapper > img
     margin-right:2.5%;
 }
 
+img.nyc {
+    height:35px;
+}
+
 div.info1 > img
 {
     margin:0 auto;
