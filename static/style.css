@@ -38,6 +38,15 @@ body
     font-size:1.1em;
 }
 
+textarea {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    border-radius:4px;
+    font-size:1.2em;
+}
+
+
 div.wrapper
 {
     min-width:950px;
@@ -163,26 +172,26 @@ div.info > div.mn-wrapper > div
     display:inline-block;
 }
 
-    div.top-wrapper > div.mid-in-wrapper
-    {
-        margin-top:8%%;
-        text-align:center;
-        transition:.25s;
-    }
+div.top-wrapper > div.mid-in-wrapper
+{
+    margin-top:8%%;
+    text-align:center;
+    transition:.25s;
+}
 
 @media screen and (max-width:1100px) {
-   /* Portrait styles here */
-   div.top-wrapper > div.mid-in-wrapper
+    /* Portrait styles here */
+    div.top-wrapper > div.mid-in-wrapper
     {
-        margin-top:5%;
-        text-align:center;
-        transition:.25s;
+	margin-top:5%;
+	text-align:center;
+	transition:.25s;
     }
-   div.top-wrapper
-   {
-        height:500px;
-        transition:.25s;
-   }
+    div.top-wrapper
+    {
+	height:500px;
+	transition:.25s;
+    }
 
 }
 
@@ -195,11 +204,11 @@ div.top-wrapper > div > p
 {
     div.top-wrapper
     {
-        height:900px;
+	height:900px;
     }
     div.top-wrapper > div.mid-in-wrapper
     {
-        margin-top:5%;
+	margin-top:5%;
     }
     div.mid-in-wrapper > h1
     {
@@ -213,10 +222,10 @@ div.top-wrapper > div > p
     {
 	font-size:1.5em;
     }
-div.top-in-wrapper > a > img
-{
-    height:35px;
-}
+    div.top-in-wrapper > a > img
+    {
+	height:35px;
+    }
     div.mid-in-wrapper > #joinBut
     {
 	height:100px;
@@ -230,7 +239,7 @@ div.top-in-wrapper > a > img
     }
     div.info, div.info1, div.infoH, div.infoC
     {
-        padding:2.5%;
+	padding:2.5%;
     }
 }
 
@@ -348,7 +357,7 @@ div.info1 > div > p > a
 #merchant > div > ul > li, #neighbor > div > ul > li
 {
     list-style-type:none;
-    
+
     margin-bottom:20px;
 }
 
@@ -417,23 +426,23 @@ div.info1 > div > p > a
 @media screen and (max-width:1500px)
 {
     #merchant > div > ul > li:nth-child(4){
-        line-height:22px;
+	line-height:22px;
     }
 
     #merchant > div > ul > li:nth-child(5){
-        line-height:22px;
+	line-height:22px;
     }
 
     #neighbor > div > ul > li:nth-child(3){
-        line-height:22px;
+	line-height:22px;
     }
 
     #neighbor > div > ul > li:nth-child(4){
-        line-height:22px;
+	line-height:22px;
     }
 
     #neighbor > div > ul > li:nth-child(5){
-        line-height:22px;
+	line-height:22px;
     }
 
 }
@@ -449,4 +458,4 @@ footer
     width:100%;
 }
 /*
-        <img src="3.jpg" />*/
+<img src="3.jpg" />*/
