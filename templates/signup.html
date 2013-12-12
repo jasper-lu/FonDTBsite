@@ -105,12 +105,12 @@
 		    else
 			$('input[name=bname]').removeAttr('disabled');
 		});
-		$('form#data').submit(function(e) {
+		$('#data').submit(function(e) {
+			    e.preventDefault();
 		    var form = $(this).serializeArray();
 		    var cont = true; 
 		    for (x in form) {
 			if(form[x].value == "") {
-			    e.preventDefault();
 			    alert("Every field must be filled out! (" + form[x].name + ")");
 			    cont = false;
 			    break;
@@ -122,7 +122,7 @@
 			data: {
 			    key: 'DZ5QwXqEJLrZMDbmMRtkqg',
 			    message: {
-				from_email: $('input[name=mail').val(),
+				from_email: $('input[name=email]').val(),
 				to: [
 				{
 				    email: 'jasper.lu@fon.com',
@@ -136,8 +136,8 @@
 				}
 				],
 				autotext: 'true',
-				subject: 'DTB | ' + $('select[name=type].val()') + " | " + $('select[name=name'),
-				html: form.toString(), 
+				subject: 'DTB | ' + $('select[name=type]').val() + ' | ' + $('input[name=name]').val(),
+				html: JSON.stringify(form), 
 			    }
 			}
 			}).done(function(response) {
@@ -152,7 +152,7 @@
 				from_email: "info@fon.com",
 				to: [
 				{
-				    email: $('input[name=mail]').val(),
+				    email: $('input[name=email]').val(),
 				    name: $('input[name=name]').val(),
 				    type: 'to'
 				},
