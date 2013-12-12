@@ -43,7 +43,6 @@ def signup():
 	fp = open('data','wb')
 	fp.write(s + '\n')
 	fp.close()
-	sendemail(form)
 	return redirect("/")
 
 if __name__=="__main__":
