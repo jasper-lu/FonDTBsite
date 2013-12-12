@@ -40,8 +40,8 @@ def signup():
 	form = request.form
 	s = str(form)
 	s = s[20:-2].replace(", u'", ", '")
-	fp = open('data','wb')
-	fp.write(s + '\n')
+	fp = open('data','a+')
+	fp.write(s+"\n")
 	fp.close()
 	return redirect("/")
 
